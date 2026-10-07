@@ -5,9 +5,10 @@ import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 
 export default defineConfig({
-  site: 'https://www.example.com',
+  site: 'https://noho.markket.place',
   output: 'static',
-
+  base: '',
+  build: { assets: 'noho' },
   integrations: [sitemap(), robotsTxt()],
 
   fonts: [
