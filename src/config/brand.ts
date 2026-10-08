@@ -14,11 +14,11 @@
 
 export const brand = {
   // ── Site Identity ──────────────────────────────────────────────────────────
-  name: 'Small Business Starter',
-  tagline: 'Professional service you can trust.',
+  name: 'Markkët',
+  tagline: 'Got a Webmaster?',
   description:
-    'A fast, mobile-first small-business website template built with Astro 7 and Tailwind v4. Fully customisable for any trade or service business.',
-  url: 'https://example.com',
+    'We build websites and practical digital tools for local businesses, so you can focus on what you do best',
+  url: 'https://noho.markket.place',
   locale: 'en_US',
 
   // ── Fonts ──────────────────────────────────────────────────────────────────

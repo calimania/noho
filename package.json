@@ -1,8 +1,8 @@
 {
-  "name": "small-business-starter",
+  "name": "markket-noho",
   "type": "module",
-  "version": "2.0.0",
-  "description": "A minimal, fast, and fully customisable small-business website template built with Astro 7 and Tailwind v4. Edit one file to set up your entire site.",
+  "version": "4.2.0",
+  "description": "A minimal, fast, and fully customisable small-business website template built with Astro 7 and Tailwind v4",
   "author": "",
   "license": "MIT",
   "keywords": [
@@ -17,7 +17,8 @@
     "small-business",
     "starter",
     "template",
-    "view-transitions"
+    "view-transitions",
+    "markket"
   ],
   "engines": {
     "node": ">=22.12.0"

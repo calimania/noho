@@ -13,50 +13,50 @@
 
 export const siteData = {
   // ── Business identity ────────────────────────────────────────────────────
-  name: 'Small Business Starter',
-  tagline: 'Professional service you can trust.',
+  name: 'NOHO Markkët',
+  tagline: '.Websites for North Hollywood & San Fernando Valley businesses.',
   description:
     'A fast, mobile-first small-business website template built with Astro 7 and Tailwind v4. Fully customisable for any trade or service business.',
-  url: 'https://example.com',
+  url: 'https://noho.markket.place',
   locale: 'en_US',
 
   /** Business / contractor license number. Displayed in the header and footer
    *  as a trust signal. Set to an empty string to hide it. */
-  license: 'Lic# 123456',
+  // license: 'Lic# 123456',
 
   // ── Contact ──────────────────────────────────────────────────────────────
-  email: 'hello@example.com',
-  phoneForTel: '555-867-5309',
-  phoneFormatted: '(555) 867-5309',
+  email: 'noho@markket.place',
+  phoneForTel: '',
+  phoneFormatted: '',
   address: {
-    lineOne: '123 Main Street',
-    lineTwo: 'Suite 100',
-    city: 'Denver',
-    state: 'CO',
-    zip: '80206',
+    lineOne: 'Burbank & Laurel Cyn',
+    lineTwo: 'Starbucks',
+    city: 'Noho',
+    state: 'CA',
+    zip: '91607',
     country: 'US',
-    mapLink: 'https://maps.app.goo.gl/example',
+    mapLink: 'mailto:noho@markket.place',
   },
   hours: [
-    { days: 'Monday - Friday', time: '7:00 AM - 6:00 PM' },
-    { days: 'Saturday', time: '8:00 AM - 2:00 PM' },
-    { days: 'Sunday', time: 'Closed' },
+    { days: 'Monday - Friday', time: '9:00 AM - 4:00 PM' },
+    { days: 'Saturday', time: 'Closed' },
+    { days: 'Sunday', time: '11:00 AM - 4:00 PM' },
   ],
   emergencyService: '24/7 Emergency Service Available',
 
   // ── Social media (set to empty string to hide a link) ────────────────────
   socials: {
-    facebook: 'https://www.facebook.com/',
-    instagram: 'https://www.instagram.com/',
-    google: 'https://www.google.com/maps',
+    // facebook: 'https://www.facebook.com/',
+    // instagram: 'https://www.instagram.com/',
+    // google: 'https://www.google.com/maps',
   },
 
   // ── Navigation (add, remove, or reorder as needed) ───────────────────────
   nav: [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Reviews', href: '/reviews' },
+    // { label: 'Services', href: '/services' },
+    // { label: 'Reviews', href: '/reviews' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],
@@ -120,10 +120,10 @@ export const siteData = {
 
   // ── Trust bar items (homepage strip) ─────────────────────────────────────
   trustItems: [
-    { label: 'Licensed' },
-    { label: 'Fully Insured' },
-    { label: 'Years Experience', value: '15+' },
-    { label: 'Jobs Completed', value: '2,500+' },
+    { label: 'Web Design' },
+    { label: 'Google & SEO' },
+    { label: 'Business Tools', },
+    { label: 'Photography', /**value: '2,500+' */ },
   ],
 
   // ── Footer nav columns ──────────────────────────────────────────────────
