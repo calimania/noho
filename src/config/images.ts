@@ -32,7 +32,7 @@ import type { ImageMetadata } from 'astro';
 // ── Hero ──────────────────────────────────────────────────────────────────────
 // Recommended: landscape, at least 1600 × 1200 px
 // To swap: replace the file in src/assets/images/hero/ and update the filename.
-import heroImage from '../assets/images/hero/hero.jpg';
+import heroImage from '../assets/images/hero/hero.avif';
 export { heroImage };
 
 // ── About ─────────────────────────────────────────────────────────────────────
