@@ -35,14 +35,14 @@ export const siteData = {
     state: 'CA',
     zip: '91607',
     country: 'US',
-    mapLink: 'mailto:noho@markket.place',
+    mapLink: 'https://maps.app.goo.gl/x83MTnW2L45qZRK7A',
   },
   hours: [
-    { days: 'Monday - Friday', time: '9:00 AM - 4:00 PM' },
+    { days: 'Monday - Friday', time: '9:00 AM - 10:00 PM' },
     { days: 'Saturday', time: 'Closed' },
     { days: 'Sunday', time: '11:00 AM - 4:00 PM' },
   ],
-  emergencyService: '24/7 Emergency Service Available',
+  emergencyService: '',
 
   // ── Social media (set to empty string to hide a link) ────────────────────
   socials: {
@@ -53,46 +53,45 @@ export const siteData = {
 
   // ── Navigation (add, remove, or reorder as needed) ───────────────────────
   nav: [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
+    // { label: 'Home', href: '/' },
+    // { label: 'About', href: '/about' },
     // { label: 'Services', href: '/services' },
     // { label: 'Reviews', href: '/reviews' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contact', href: '/contact' },
+    // { label: 'Blog', href: '/blog' },
+    // { label: 'Contact', href: '/contact' },
   ],
 
   // ── Services ─────────────────────────────────────────────────────────────
   services: [
     {
-      title: 'General Repairs',
+      title: 'Websites & Landing Pages',
       description:
-        'From leaky faucets to broken drywall, our team handles everyday repairs quickly and professionally. We diagnose the issue, explain your options, and get it fixed — no surprises on the bill.',
+        'Get a professional website that tells your story, showcases your work, and makes it easy for customers to contact you. From simple landing pages to full business websites, we\'ll help you get online',
     },
     {
-      title: 'Installations',
+      title: 'Google & Local SEO',
       description:
-        'New fixtures, appliances, water heaters, ceiling fans, and more. We ensure every installation is up to code, properly tested, and backed by our workmanship guarantee.',
+        "Help nearby customers find you online. We'll improve your website's search basics, strengthen your local presence, and help you put your best foot forward on Google",
     },
     {
-      title: 'Inspections',
+      title: 'Booking & Business Tools',
       description:
-        'Comprehensive property inspections for homebuyers, sellers, and proactive homeowners. We identify potential issues before they become expensive emergencies.',
+        "Spend less time juggling admin. Add contact forms, appointment booking, online payments, customer management, and other tools that make running your business easier",
     },
     {
-      title: 'Remodeling',
+      title: 'Photography & Content',
       description:
-        'Kitchen and bathroom remodels, basement finishing, and whole-home renovations. We manage the project from design through final walkthrough so you can enjoy the transformation.',
+        "Show customers the people and work behind your business. Get professional photos and clear, engaging website content that helps your business stand out",
     },
     {
-      title: 'Emergency Service',
+      title: 'Website Updates & Support',
       description:
-        "Burst pipes, electrical outages, and other urgent problems don't wait — and neither do we. Our emergency line is staffed 24/7 for rapid response when you need it most.",
+        "Already have a website? We can help update pages, fix issues, improve the design, and keep your information current without starting from scratch",
     },
     {
-      title: 'Maintenance Plans',
-      description:
-        'Regular preventive maintenance keeps your systems running efficiently and extends their lifespan. Ask about our seasonal service packages for year-round peace of mind.',
-    },
+      title: "Online Stores & Custom Projects",
+      description: 'Ready to do more online? We can help you sell products, accept payments, organize your operations, or build custom digital solutions around the way your business works'
+    }
   ],
 
   // ── Reviews ──────────────────────────────────────────────────────────────
@@ -131,18 +130,18 @@ export const siteData = {
     {
       title: 'Company',
       links: [
-        { label: 'About', href: '/about' },
+        // { label: 'About', href: '/about' },
         { label: 'Services', href: '/services' },
-        { label: 'Reviews', href: '/reviews' },
-        { label: 'Blog', href: '/blog' },
+        // { label: 'Reviews', href: '/reviews' },
+        // { label: 'Blog', href: '/blog' },
       ],
     },
     {
       title: 'Support',
       links: [
         { label: 'Contact', href: '/contact' },
-        { label: 'Privacy', href: '/privacy' },
-        { label: 'Terms', href: '/terms' },
+        // { label: 'Privacy', href: '/privacy' },
+        // { label: 'Terms', href: '/terms' },
       ],
     },
   ],

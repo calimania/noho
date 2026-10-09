@@ -40,8 +40,8 @@ export { heroImage };
 // To use: drop your file into src/assets/images/about/, then uncomment the
 // import below, update the filename, and change the export to: export { aboutImage };
 //
-// import aboutImage from '../assets/images/about/team.jpg';
-export const aboutImage: ImageMetadata | undefined = undefined;
+import aboutImage from '../assets/images/about/team.jpg';
+export { aboutImage };
 //comment out above and uncomment below to use your own image
 // export { aboutImage };
 

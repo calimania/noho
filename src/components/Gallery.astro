@@ -13,11 +13,11 @@ interface Props {
 }
 
 const {
-  topper = "Our Work",
-  heading = "Examples of our work",
-  description = "See the quality and attention to detail we bring to every job.",
+  topper = "A FEW WAYS WE CAN HELP",
+  heading = "BUILT FOR REAL-WORLD BUSINESS",
+  description = "From clean, professional websites to custom business tools, we build digital experiences that help people find you, understand what you offer, and take the next step",
   images = defaultImages,
-  ctaLabel = "View All Services",
+  ctaLabel = "Explore Our Services",
   ctaHref = "/services",
 } = Astro.props;
 ---
@@ -25,9 +25,9 @@ const {
 <section class="py-section">
   <div class="mx-auto max-w-site px-4 sm:px-6">
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <span class="text-topper font-bold uppercase tracking-widest text-accent"
-        >{topper}</span
-      >
+      <span class="text-topper font-bold uppercase tracking-widest text-accent">
+        {topper}
+      </span>
       <h2 class="mt-2 font-heading text-h2 font-bold uppercase text-text">
         {heading}
       </h2>
@@ -108,8 +108,20 @@ const {
           class="absolute right-3 top-3 z-10 flex size-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-5 sm:top-5"
           aria-label="Close lightbox"
         >
-          <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            class="size-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            >
+            </path>
           </svg>
         </button>
 
@@ -120,20 +132,39 @@ const {
           class="absolute left-2 z-10 flex size-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:left-5"
           aria-label="Previous image"
         >
-          <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          <svg
+            class="size-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            >
+            </path>
           </svg>
         </button>
 
         {/* Image container */}
-        <figure class="flex max-h-[85dvh] max-w-[90vw] flex-col items-center gap-3 sm:max-w-[80vw]" data-lightbox-figure>
+        <figure
+          class="flex max-h-[85dvh] max-w-[90vw] flex-col items-center gap-3 sm:max-w-[80vw]"
+          data-lightbox-figure
+        >
           <img
             src=""
             alt=""
             class="max-h-[75dvh] max-w-full rounded-md object-contain"
             data-lightbox-img
           />
-          <figcaption class="text-center text-sm text-white/80" data-lightbox-caption></figcaption>
+          <figcaption
+            class="text-center text-sm text-white/80"
+            data-lightbox-caption
+          >
+          </figcaption>
         </figure>
 
         {/* Next button */}
@@ -143,8 +174,20 @@ const {
           class="absolute right-2 z-10 flex size-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-5"
           aria-label="Next image"
         >
-          <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          <svg
+            class="size-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            >
+            </path>
           </svg>
         </button>
 
@@ -153,7 +196,8 @@ const {
           class="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80"
           data-lightbox-counter
           aria-live="polite"
-        ></span>
+        >
+        </span>
       </div>
     </dialog>
 
@@ -189,44 +233,61 @@ const {
 <script>
   function initGallery() {
     // ── Thumbnail loading states ──────────────────────────────────
-    document.querySelectorAll<HTMLElement>("[data-gallery-item]").forEach((item) => {
-      const img = item.querySelector<HTMLImageElement>("[data-gallery-img]");
-      const skeleton = item.querySelector<HTMLElement>("[data-skeleton]");
-      const errorState = item.querySelector<HTMLElement>("[data-error-state]");
-      if (!img || !skeleton || !errorState) return;
+    document
+      .querySelectorAll<HTMLElement>("[data-gallery-item]")
+      .forEach((item) => {
+        const img = item.querySelector<HTMLImageElement>("[data-gallery-img]");
+        const skeleton = item.querySelector<HTMLElement>("[data-skeleton]");
+        const errorState =
+          item.querySelector<HTMLElement>("[data-error-state]");
+        if (!img || !skeleton || !errorState) return;
 
-      function onLoad() {
-        img!.classList.remove("opacity-0");
-        skeleton!.remove();
-      }
+        function onLoad() {
+          img!.classList.remove("opacity-0");
+          skeleton!.remove();
+        }
 
-      function onError() {
-        skeleton!.remove();
-        img!.classList.add("hidden");
-        errorState!.classList.remove("hidden");
-        errorState!.classList.add("flex");
-      }
+        function onError() {
+          skeleton!.remove();
+          img!.classList.add("hidden");
+          errorState!.classList.remove("hidden");
+          errorState!.classList.add("flex");
+        }
 
-      if (img.complete) {
-        img.naturalWidth > 0 ? onLoad() : onError();
-        return;
-      }
+        if (img.complete) {
+          img.naturalWidth > 0 ? onLoad() : onError();
+          return;
+        }
 
-      img.addEventListener("load", onLoad, { once: true });
-      img.addEventListener("error", onError, { once: true });
-    });
+        img.addEventListener("load", onLoad, { once: true });
+        img.addEventListener("error", onError, { once: true });
+      });
 
     // ── Lightbox ──────────────────────────────────────────────────
-    const dialog = document.getElementById("gallery-lightbox") as HTMLDialogElement | null;
+    const dialog = document.getElementById(
+      "gallery-lightbox",
+    ) as HTMLDialogElement | null;
     if (!dialog || dialog.dataset.lbInit === "true") return;
     dialog.dataset.lbInit = "true";
 
-    const lbImg = dialog.querySelector<HTMLImageElement>("[data-lightbox-img]")!;
-    const lbCaption = dialog.querySelector<HTMLElement>("[data-lightbox-caption]")!;
-    const lbCounter = dialog.querySelector<HTMLElement>("[data-lightbox-counter]")!;
-    const btnClose = dialog.querySelector<HTMLButtonElement>("[data-lightbox-close]")!;
-    const btnPrev = dialog.querySelector<HTMLButtonElement>("[data-lightbox-prev]")!;
-    const btnNext = dialog.querySelector<HTMLButtonElement>("[data-lightbox-next]")!;
+    const lbImg = dialog.querySelector<HTMLImageElement>(
+      "[data-lightbox-img]",
+    )!;
+    const lbCaption = dialog.querySelector<HTMLElement>(
+      "[data-lightbox-caption]",
+    )!;
+    const lbCounter = dialog.querySelector<HTMLElement>(
+      "[data-lightbox-counter]",
+    )!;
+    const btnClose = dialog.querySelector<HTMLButtonElement>(
+      "[data-lightbox-close]",
+    )!;
+    const btnPrev = dialog.querySelector<HTMLButtonElement>(
+      "[data-lightbox-prev]",
+    )!;
+    const btnNext = dialog.querySelector<HTMLButtonElement>(
+      "[data-lightbox-next]",
+    )!;
 
     // Collect image data from rendered thumbnails
     type Slide = { src: string; alt: string };
@@ -236,11 +297,14 @@ const {
 
     function collectSlides() {
       slides = [];
-      document.querySelectorAll<HTMLElement>("[data-gallery-item]").forEach((item) => {
-        const img = item.querySelector<HTMLImageElement>("[data-gallery-img]");
-        if (!img) return;
-        slides.push({ src: img.currentSrc || img.src, alt: img.alt });
-      });
+      document
+        .querySelectorAll<HTMLElement>("[data-gallery-item]")
+        .forEach((item) => {
+          const img =
+            item.querySelector<HTMLImageElement>("[data-gallery-img]");
+          if (!img) return;
+          slides.push({ src: img.currentSrc || img.src, alt: img.alt });
+        });
     }
 
     function show(index: number) {
@@ -268,7 +332,9 @@ const {
 
     // Open on thumbnail click
     document.addEventListener("click", (e) => {
-      const btn = (e.target as Element).closest<HTMLElement>("[data-gallery-index]");
+      const btn = (e.target as Element).closest<HTMLElement>(
+        "[data-gallery-index]",
+      );
       if (!btn) return;
       const idx = parseInt(btn.dataset.galleryIndex ?? "0", 10);
       open(idx, btn);
@@ -286,8 +352,14 @@ const {
 
     // Keyboard navigation (arrows handled inside the open dialog)
     dialog.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1); }
-      if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        show(current - 1);
+      }
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        show(current + 1);
+      }
     });
 
     // ── Touch / swipe support ─────────────────────────────────────
@@ -295,21 +367,29 @@ const {
     let touchStartY = 0;
     let swiping = false;
 
-    dialog.addEventListener("touchstart", (e) => {
-      if (e.touches.length !== 1) return;
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-      swiping = true;
-    }, { passive: true });
+    dialog.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        swiping = true;
+      },
+      { passive: true },
+    );
 
-    dialog.addEventListener("touchend", (e) => {
-      if (!swiping || e.changedTouches.length !== 1) return;
-      swiping = false;
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      const dy = e.changedTouches[0].clientY - touchStartY;
-      if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
-      dx < 0 ? show(current + 1) : show(current - 1);
-    }, { passive: true });
+    dialog.addEventListener(
+      "touchend",
+      (e) => {
+        if (!swiping || e.changedTouches.length !== 1) return;
+        swiping = false;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
+        dx < 0 ? show(current + 1) : show(current - 1);
+      },
+      { passive: true },
+    );
 
     // Clean up dialog-init flag on page swap so it re-binds
     document.addEventListener("astro:before-swap", () => {

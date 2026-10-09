@@ -1,5 +1,5 @@
 ---
-import { siteData } from '../data/siteData';
+import { siteData } from "../data/siteData";
 
 interface ServiceItem {
   title: string;
@@ -15,36 +15,61 @@ interface Props {
 }
 
 const {
-  topper = 'What We Do',
-  heading = 'Our Services',
-  description = 'From routine maintenance to complex projects, we deliver quality workmanship with honest pricing.',
-  services = siteData.services.map((s) => ({ ...s, href: '/services' })),
+  topper = "How we can help",
+  heading = "YOUR BUSINESS, ONLINE",
+  description = ". From your first website to better business tools, we make technology simple, useful, and affordable. Clear pricing, personal service, and no unnecessary complexity .",
+  services = siteData.services.map((s) => ({ ...s, href: "/services" })),
 } = Astro.props;
 ---
 
 <section class="bg-surface py-section">
   <div class="mx-auto max-w-site px-4 sm:px-6">
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <span class="text-topper font-bold uppercase tracking-widest text-accent">{topper}</span>
-      <h2 class="mt-2 font-heading text-h2 font-bold uppercase text-text">{heading}</h2>
+      <span class="text-topper font-bold uppercase tracking-widest text-accent">
+        {topper}
+      </span>
+      <a name="services"></a>
+      <h2 class="mt-2 font-heading text-h2 font-bold uppercase text-text">
+        {heading}
+      </h2>
       <p class="mt-3 text-text-muted leading-relaxed">{description}</p>
     </div>
-
-    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
-      {services.map((service) => (
-        <li>
-          <a
-            href={service.href || '/services'}
-            class="group flex h-full cursor-pointer flex-col rounded-lg border border-border bg-background p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
-          >
-            <h3 class="font-heading text-h3 font-semibold text-text">{service.title}</h3>
-            <p class="mt-2 flex-1 text-sm leading-relaxed text-text-muted">{service.description}</p>
-            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-accent" aria-hidden="true">
-              Learn more <span class="transition-transform group-hover:translate-x-0.5">&rarr;</span>
-            </span>
-          </a>
-        </li>
-      ))}
+    <ul
+      class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      role="list"
+    >
+      {
+        services.map((service) => (
+          <li>
+            {service.href && (
+              <a
+                href={
+                  (service.href !== "/services" && service.href) || `#services`
+                }
+                class="group flex h-full cursor-pointer flex-col rounded-lg border border-border bg-background p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
+              >
+                <h3 class="font-heading text-h3 font-semibold text-text">
+                  {service.title}
+                </h3>
+                <p class="mt-2 flex-1 text-sm leading-relaxed text-text-muted">
+                  {service.description}
+                </p>
+                {service.href !== "/services" && (
+                  <span
+                    class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-accent"
+                    aria-hidden="true"
+                  >
+                    Learn more{" "}
+                    <span class="transition-transform group-hover:translate-x-0.5">
+                      &rarr;
+                    </span>
+                  </span>
+                )}
+              </a>
+            )}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>

@@ -1,7 +1,7 @@
 {
   "name": "markket-noho",
   "type": "module",
-  "version": "4.2.0",
+  "version": "0.42.0",
   "description": "A minimal, fast, and fully customisable small-business website template built with Astro 7 and Tailwind v4",
   "author": "",
   "license": "MIT",
@@ -13,6 +13,9 @@
     "tailwind",
     "tailwindcss",
     "css",
+    "noho",
+    "valley village",
+    "webmaster",
     "ui",
     "small-business",
     "starter",

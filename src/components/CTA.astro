@@ -1,5 +1,5 @@
 ---
-import { siteData } from '../data/siteData';
+import { siteData } from "../data/siteData";
 
 interface Props {
   title?: string;
@@ -9,10 +9,10 @@ interface Props {
 }
 
 const {
-  title = 'Ready to Get Started?',
-  description = 'Contact us today for a free, no-obligation quote. We\'re here to help with any project — big or small.',
-  buttonText = 'Get Your Free Quote',
-  buttonHref = '/contact',
+  title = "LET'S GET YOUR BUSINESS ONLINE.",
+  description = ". Tell us what you're working on. Whether you need a new website, a few fixes, or a better way to run your business, we'll help you figure out the next step .",
+  buttonText = "Let's Talk",
+  buttonHref = "/contact",
 } = Astro.props;
 ---
 
@@ -25,19 +25,25 @@ const {
       {description}
     </p>
 
-    <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+    <div
+      class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+    >
       <a
         href={buttonHref}
         class="inline-flex min-h-11 items-center justify-center rounded-md bg-accent px-8 py-3 text-base font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         {buttonText}
       </a>
-      <a
-        href={`tel:${siteData.phoneForTel}`}
-        class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-primary-fg/30 px-8 py-3 text-base font-bold text-primary-fg transition-colors hover:border-primary-fg hover:bg-primary-fg/10"
-      >
-        Call{" "}{siteData.phoneFormatted}
-      </a>
+      {
+        siteData.phoneFormatted && (
+          <a
+            href={`tel:${siteData.phoneForTel}`}
+            class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-primary-fg/30 px-8 py-3 text-base font-bold text-primary-fg transition-colors hover:border-primary-fg hover:bg-primary-fg/10"
+          >
+            Call {siteData.phoneFormatted}
+          </a>
+        )
+      }
     </div>
   </div>
 </section>

@@ -17,16 +17,16 @@ const currentPath = strip(Astro.url.pathname);
   >
     <!-- Logo -->
     <div class="flex flex-col gap-2">
-    <a
-      href="/"
-      class="font-heading text-xl font-bold uppercase tracking-wide text-primary transition-opacity hover:opacity-80"
-    >
-      {brand.name}
-    </a>
+      <a
+        href="/"
+        class="font-heading text-xl font-bold uppercase tracking-wide text-primary transition-opacity hover:opacity-80"
+      >
+        {brand.name}
+      </a>
       <span class="rounded-full lg:hidden text-xs font-medium">
         {siteData.license}
       </span>
-      </div>
+    </div>
 
     <!-- Desktop nav -->
     <nav
@@ -75,7 +75,7 @@ const currentPath = strip(Astro.url.pathname);
         href="/contact"
         class="inline-flex min-h-11 items-center rounded-md bg-accent px-5 py-2.5 text-sm font-bold text-accent-fg shadow-sm transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
-        Free Quote
+        Contact
       </a>
     </div>
 
@@ -97,11 +97,7 @@ const currentPath = strip(Astro.url.pathname);
   </div>
 
   <!-- Mobile drawer -->
-  <div
-    id="mobile-menu"
-    class="mobile-drawer"
-    inert
-  >
+  <div id="mobile-menu" class="mobile-drawer" inert>
     <div class="border-t border-border bg-background">
       <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
         {
@@ -139,7 +135,6 @@ const currentPath = strip(Astro.url.pathname);
         >
           Get a Free Quote
         </a>
-
       </div>
     </div>
   </div>
@@ -221,17 +216,22 @@ const currentPath = strip(Astro.url.pathname);
 
     const ACTIVE = ["bg-primary/10", "text-primary"];
     const INACTIVE_DT = ["text-text-muted", "hover:text-text"];
-    const INACTIVE_MB = ["text-text-muted", "hover:text-text", "hover:bg-surface"];
+    const INACTIVE_MB = [
+      "text-text-muted",
+      "hover:text-text",
+      "hover:bg-surface",
+    ];
     const isDesktop = () => window.matchMedia("(min-width: 1024px)").matches;
-    const strip = (p: string) => (p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p);
+    const strip = (p: string) =>
+      p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p;
 
     let focusableEls: HTMLElement[] = [];
 
     function getFocusable(): HTMLElement[] {
       return Array.from(
         menu.querySelectorAll<HTMLElement>(
-          'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-        )
+          'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
+        ),
       );
     }
 
@@ -242,7 +242,10 @@ const currentPath = strip(Astro.url.pathname);
       const first = els[0];
       const last = els[els.length - 1];
       if (e.shiftKey) {
-        if (document.activeElement === first || document.activeElement === btn) {
+        if (
+          document.activeElement === first ||
+          document.activeElement === btn
+        ) {
           e.preventDefault();
           last.focus();
         }
@@ -269,7 +272,9 @@ const currentPath = strip(Astro.url.pathname);
 
     function syncActiveLinks() {
       const path = strip(window.location.pathname);
-      const dtLinks = header.querySelectorAll('nav[aria-label="Primary navigation"] a');
+      const dtLinks = header.querySelectorAll(
+        'nav[aria-label="Primary navigation"] a',
+      );
       const mbLinks = header.querySelectorAll("#mobile-menu nav a");
 
       dtLinks.forEach((link) => {

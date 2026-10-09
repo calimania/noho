@@ -13,12 +13,12 @@ interface Props {
 }
 
 const {
-  topper = 'Testimonials',
-  heading = 'What our customers say',
+  topper = 'WHY WORK WITH US',
+  heading = 'GOOD WORK. NO RUNAROUND.',
   reviews = [
-    { quote: 'They showed up on time, explained everything clearly, and finished the job faster than expected. Best service experience we\'ve had.', name: 'Sarah M.', location: 'Denver, CO', rating: 5 },
-    { quote: 'Honest pricing and top-notch work. I\'ve used them for three different projects now and they never disappoint.', name: 'James R.', location: 'Aurora, CO', rating: 5 },
-    { quote: 'Our emergency call was answered in minutes. They had the problem fixed before dinner. Truly dependable.', name: 'Linda K.', location: 'Lakewood, CO', rating: 5 },
+    { quote: "Talk directly with the person building your website. Your goals, questions, and ideas won't get lost in a chain of account managers", name: 'Personal Service', location: '', rating: 5 },
+    { quote: "No bloated package full of things you don't need. We'll focus on the features and tools that make the biggest difference for your business", name: 'Built Around Your Needs', location: '', rating: 5 },
+    { quote: "Your business will change. When it's time to update your website, add a new feature, or explore the next idea, you'll have someone to call", name: 'Here for the Long Run', location: '', rating: 5 },
   ],
 } = Astro.props;
 ---
@@ -48,7 +48,7 @@ const {
           </div>
 
           <blockquote class="flex-1 text-text-muted leading-relaxed">
-            &ldquo;{quote}&rdquo;
+            {quote}
           </blockquote>
 
           <div class="mt-4 border-t border-border pt-4">
